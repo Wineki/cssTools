@@ -41,13 +41,21 @@ a, img {
 */
 
 /*
- *  关于页面中文本超出部分显示省略号的问题
+ *  关于页面中单行文本超出部分显示省略号的问题
  *  css控制换行：（设置width或max-width）
 */
 li{
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
+}
+/*多行文本像是省略问题(webkit浏览器或移动端页面)*/
+li{
+	display:-webkit-box;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
 }
 /*
  *   为文字设置小图标
